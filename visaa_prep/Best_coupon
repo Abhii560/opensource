@@ -1,0 +1,5 @@
+X = int(input().strip())
+discount_10_percent = X * 10 // 100
+amount_10_percent = X - (0.1 * X)
+amount_flat_100 = X - 100
+print(min(amount_10_percent, amount_flat_100))
