@@ -1,0 +1,5 @@
+X, N = map(int, input().split())
+capacity = X * 100
+passengers = max(0, N - capacity)
+planes = (passengers + 99) // 100 
+print(planes)
