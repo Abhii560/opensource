@@ -1,0 +1,3 @@
+N = int(input().strip())
+num_of_books = N * 10
+print(num_of_books)
