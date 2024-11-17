@@ -1,0 +1,7 @@
+X, Y, Z = map(int, input().split())
+total_time = X * Y
+available_time = Z * 1440
+if total_time <= available_time:
+    print("YES")
+else:
+    print("NO")
