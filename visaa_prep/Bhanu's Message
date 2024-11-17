@@ -1,0 +1,19 @@
+import re
+
+try:
+    number = input().strip()
+    pattern = r"^(?:\+\d{1,2} )?\d{10}$"
+    def is_valid_number(number):
+        
+        if not re.match(pattern, number):
+            return False
+        digits = re.findall(r"\d", number)[-10:]
+        digit_sum = sum(map(int, digits))
+        return digit_sum > 0
+    if is_valid_number(number):
+        print("Correct")
+    else:
+        print("Incorrect")
+
+except EOFError:
+    print("Incorrect")
