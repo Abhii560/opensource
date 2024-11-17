@@ -1,19 +1,9 @@
 import re
-
-try:
-    number = input().strip()
-    pattern = r"^(?:\+\d{1,2} )?\d{10}$"
-    def is_valid_number(number):
-        
-        if not re.match(pattern, number):
-            return False
-        digits = re.findall(r"\d", number)[-10:]
-        digit_sum = sum(map(int, digits))
-        return digit_sum > 0
-    if is_valid_number(number):
-        print("Correct")
-    else:
-        print("Incorrect")
-
-except EOFError:
-    print("Incorrect")
+def validate_number(number):
+    if len(number) == 10 and number.isdigit():  
+        return "Correct"
+    match = re.match(r"^\+(\d{2}) (\d{10})$", number)  
+    if match and sum(int(d) for d in match.group(2)) > 0: 
+        return "Correct"
+    return "Incorrect"
+print(validate_number(input().strip()))
